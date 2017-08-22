@@ -27,4 +27,8 @@ Example:
 set value to do shell script "/usr/local/bin/node /Users/Reinke/bitfinex/ticker.js 'btcusd'"
 return value
 
+TIP:
+
+To avoid issue unexpected server response (429 - too many requests Blank return ), set execute this script every 60 seconds.
+
 Enjoy :-)
