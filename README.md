@@ -4,10 +4,12 @@ Simple Ticker to retrieve value of cryptocoins from Bitfinex
 
 #How to use:
 
-1 - Install Bitfinex Rest API
+1 - Install Bitfinex Rest API:
+
   npm install bitfinex-api-node
 
-2 - Download BetterTouchTool;
+2 - Download BetterTouchTool:
+
 https://www.boastr.net/downloads/
 
 3 - Download ticker.js file ;
