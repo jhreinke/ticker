@@ -8,6 +8,7 @@ Simple Ticker to retrieve value of cryptocoins from Bitfinex
   npm install bitfinex-api-node
 
 2 - Download BetterTouchTool;
+https://www.boastr.net/downloads/
 
 3 - Download ticker.js file ;
 
@@ -20,6 +21,7 @@ set value to do shell script "/usr/local/bin/node /Users/Your_user/directory/tic
 return value
 
 Example:
+
 set value to do shell script "/usr/local/bin/node /Users/Reinke/bitfinex/ticker.js 'btcusd'"
 return value
 
