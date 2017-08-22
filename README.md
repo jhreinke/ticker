@@ -2,7 +2,8 @@
 Simple Ticker to retrieve value of cryptocoins from Bitfinex
 
 
-How to use:
+#How to use:
+
 1 - Install Bitfinex Rest API
   npm install bitfinex-api-node
 
