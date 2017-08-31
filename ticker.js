@@ -21,28 +21,49 @@
 // return value
 //
 // -----------------------------------------------------------------------------------------------//
+
 const BFX = require('bitfinex-api-node')
- 
+
 const API_KEY = ''
 const API_SECRET = ''
 var VALUE = process.argv[2];
 
-//console.log(VALUE)
+// Create our number formatter.
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+  // the default value for minimumFractionDigits depends on the currency
+  // and is usually already 2
+});
 
 const opts = {
   version: 2,
   transform: true
-}
- 
+  }
+
 const bws = new BFX(API_KEY, API_SECRET, opts).ws
- 
+
 bws.on('open', () => {
   bws.subscribeTicker(VALUE)
+ 
 })
 
 bws.on('ticker', (pair, ticker) => {
-	console.log(ticker.LAST_PRICE)	
-    process.exit(0)
+	
+	switch(VALUE) {
+    case "btcusd":
+        console.log(formatter.format(ticker.LAST_PRICE))
+        break;   
+    case "omgbtc":
+ 	// Last Price - Your buy price X your coin ammount| Last Price of coin 
+        console.log(((ticker.LAST_PRICE - 0.0023710) * 259.32655948).toFixed(7) + " | Value: " + ticker.LAST_PRICE.toFixed(8))
+        break;
+    default:
+        console.log(ticker.LAST_PRICE)
+}
+  process.exit(0)
+
 })
 
 bws.on('error', console.error)
